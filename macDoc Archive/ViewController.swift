@@ -7,13 +7,22 @@
 //
 
 import Cocoa
+import Foundation
+import PDFKit
 
 class ViewController: NSViewController {
 
+    @IBOutlet weak var pdfFileView: PDFView!
+    @IBOutlet weak var pdfFileThumbnailView: PDFThumbnailView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let home = FileManager.default.homeDirectoryForCurrentUser
+        let pdfFilePath = "Barnsbury Estate Greenspace Improvements.pdf"
+        let pdfFileUrl = home.appendingPathComponent(pdfFilePath)
+
     }
 
     override var representedObject: Any? {
