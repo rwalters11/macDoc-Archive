@@ -12,16 +12,29 @@ import PDFKit
 
 class ViewController: NSViewController {
 
+    // Storyboard Connections
     @IBOutlet weak var pdfFileView: PDFView!
     @IBOutlet weak var pdfFileThumbnailView: PDFThumbnailView!
+    
+    // Variables and Constants
+    let pdfThumbnailDimension = 120
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let home = FileManager.default.homeDirectoryForCurrentUser
-        let pdfFilePath = "Barnsbury Estate Greenspace Improvements.pdf"
-        let pdfFileUrl = home.appendingPathComponent(pdfFilePath)
+        let pdfFile = "begsi.pdf"
+        let pdfFileURL:URL = home.appendingPathComponent(pdfFile)
+        
+        // Setup the main PDF file view
+        setupPDFView()
+        // Setup the PDF thumbnail view
+        setupThumbnailView()
+        
+        
+        // Load the initial PDFfile
+        loadPDF(pdfFileURL: pdfFileURL)
 
     }
 
@@ -29,6 +42,23 @@ class ViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    func setupPDFView() {
+        pdfFileView.autoScales = true
+    }
+
+    func setupThumbnailView() {
+        pdfFileThumbnailView.pdfView = pdfFileView
+        pdfFileThumbnailView.thumbnailSize = CGSize(width: pdfThumbnailDimension, height: pdfThumbnailDimension)
+        //pdfFileThumbnailView.backgroundColor = sidebarBackgroundColor
+    }
+
+    func loadPDF(pdfFileURL: URL) {
+        // Create a `PDFDocument` object and set it as `PDFView`'s document to load the document in that view.
+        let document = PDFDocument(url: pdfFileURL)
+        pdfFileView.document = document
+        //resetNavigationButtons()
     }
 
 

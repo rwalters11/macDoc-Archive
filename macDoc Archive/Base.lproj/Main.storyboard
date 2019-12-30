@@ -715,16 +715,16 @@
                                 <rect key="frame" x="103" y="0.0" width="357" height="250"/>
                             </pdfView>
                             <pdfThumbnailView wantsLayer="YES" maximumNumberOfColumns="1" translatesAutoresizingMaskIntoConstraints="NO" id="Mb0-GG-6g9">
-                                <rect key="frame" x="20" y="0.0" width="75" height="250"/>
+                                <rect key="frame" x="20" y="0.0" width="117" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="75" id="346-W6-c3v"/>
+                                    <constraint firstAttribute="width" constant="117" id="346-W6-c3v"/>
                                 </constraints>
                                 <size key="thumbnailSize" width="64" height="64"/>
                             </pdfThumbnailView>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Mb0-GG-6g9" secondAttribute="bottom" id="1pb-VA-uFy"/>
-                            <constraint firstItem="Zaj-Yd-Mon" firstAttribute="leading" secondItem="Mb0-GG-6g9" secondAttribute="trailing" constant="8" symbolic="YES" id="2BX-rw-T6R"/>
+                            <constraint firstItem="Zaj-Yd-Mon" firstAttribute="leading" secondItem="Mb0-GG-6g9" secondAttribute="trailing" constant="-34" id="2BX-rw-T6R"/>
                             <constraint firstItem="Zaj-Yd-Mon" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="D8q-H2-Rsf"/>
                             <constraint firstAttribute="trailing" secondItem="Zaj-Yd-Mon" secondAttribute="trailing" constant="20" symbolic="YES" id="F38-qL-hL9"/>
                             <constraint firstAttribute="bottom" secondItem="Zaj-Yd-Mon" secondAttribute="bottom" id="GDy-v9-4k5"/>
