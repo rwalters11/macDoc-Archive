@@ -16,6 +16,16 @@ class ViewController: NSViewController {
     @IBOutlet weak var pdfFileView: PDFView!
     @IBOutlet weak var pdfFileThumbnailView: PDFThumbnailView!
     
+    // MARK: - Main Menu Actions
+       @IBAction func menuFileOpen(_ sender: NSMenuItem) {
+        
+            // Console output
+            print("ViewController:actionMenuItemSelected")
+           
+            // Open select file panel
+            openFile()
+       }
+    
     // Variables and Constants
     let pdfThumbnailDimension = 120
     
