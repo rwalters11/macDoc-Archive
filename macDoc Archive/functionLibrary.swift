@@ -40,7 +40,7 @@ func openFile() {
         let result = dialog.url // Pathname of the file
         
         if (result != nil) {
-            let path = result!.path
+            //let path = result!.path
             //filename_field.stringValue = path
         }
     } else {
