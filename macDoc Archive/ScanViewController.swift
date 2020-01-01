@@ -7,9 +7,12 @@
 //
 
 import Cocoa
+import Quartz
 
 class ScanViewController: NSViewController {
 
+    @IBOutlet weak var scannerView: IKScannerDeviceView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

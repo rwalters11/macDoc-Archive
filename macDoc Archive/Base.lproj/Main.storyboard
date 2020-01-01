@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.imagekit.ibplugin" version="15702"/>
         <plugIn identifier="com.apple.pdfkit.ibplugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -105,13 +106,19 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="aJh-i4-bef"/>
-                                        <menuItem title="Page Setup…" keyEquivalent="P" id="qIS-W8-SiK">
+                                        <menuItem title="Scan Document" id="lde-un-65l">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <segue destination="aQV-GO-j0D" kind="modal" id="fI8-L6-VSz"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Page Setup…" enabled="NO" keyEquivalent="P" id="qIS-W8-SiK">
                                             <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
                                             <connections>
                                                 <action selector="runPageLayout:" target="Ady-hI-5gd" id="Din-rz-gC5"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Print…" keyEquivalent="p" id="aTl-1u-JFS">
+                                        <menuItem title="Print…" enabled="NO" keyEquivalent="p" id="aTl-1u-JFS">
                                             <connections>
                                                 <action selector="print:" target="Ady-hI-5gd" id="qaZ-4w-aoO"/>
                                             </connections>
@@ -679,7 +686,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="-344"/>
+            <point key="canvasLocation" x="98" y="-389"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -703,14 +710,23 @@
             </objects>
             <point key="canvasLocation" x="-183" y="-112"/>
         </scene>
-        <!--Scan View Controller-->
+        <!--Scan Document-->
         <scene sceneID="3px-xJ-N9y">
             <objects>
-                <viewController title="Scan View Controller" id="aQV-GO-j0D" customClass="ScanViewController" customModule="macDoc_Archive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Scan Document" id="aQV-GO-j0D" customClass="ScanViewController" customModule="macDoc_Archive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ViP-hi-Prg" customClass="SCNView">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <ikScannerDeviceView fixedFrame="YES" scanControlLabel="Scan" overviewControlLabel="Overview" documentName="Scan" translatesAutoresizingMaskIntoConstraints="NO" id="RXU-Bt-MEx">
+                                <rect key="frame" x="49" y="0.0" width="364" height="282"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </ikScannerDeviceView>
+                        </subviews>
                     </view>
+                    <connections>
+                        <outlet property="scannerView" destination="RXU-Bt-MEx" id="7v3-VT-UIE"/>
+                    </connections>
                 </viewController>
                 <customObject id="KqN-yj-A1t" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
