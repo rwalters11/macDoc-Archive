@@ -15,6 +15,7 @@ func showInFinder(url: URL?){
     NSWorkspace.shared.activateFileViewerSelecting([url])
 }
 
+// Function to show a Folder in a Finder View
 func showFolderInFinder(folderName : String = "")
 {
     
@@ -24,6 +25,7 @@ func showFolderInFinder(folderName : String = "")
     
 }
 
+// Function to open a Modal File Selection Panel
 func openFile() {
     
     let dialog = NSOpenPanel();

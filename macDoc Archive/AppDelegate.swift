@@ -7,14 +7,16 @@
 //
 
 import Cocoa
+import Quartz
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+    var deviceBrowser:ICDeviceBrowser!
+    var devScanner: ICScannerDevice!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -123,4 +125,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
 }
+
 

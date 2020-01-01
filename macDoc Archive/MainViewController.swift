@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  macDoc Archive
 //
 //  Created by Richard Walters on 29/12/2019.
@@ -10,7 +10,7 @@ import Cocoa
 import Foundation
 import Quartz
 
-class ViewController: NSViewController {
+class MainViewController: NSViewController {
 
     // Storyboard Connections
     @IBOutlet weak var pdfFileView: PDFView!
@@ -29,6 +29,8 @@ class ViewController: NSViewController {
     // Variables and Constants
     let pdfThumbnailDimension = 120
     
+    var deviceBrowser:ICDeviceBrowser!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +44,9 @@ class ViewController: NSViewController {
         // Setup the PDF thumbnail view
         setupThumbnailView()
         
-        
         // Load the initial PDFfile
         loadPDF(pdfFileURL: pdfFileURL)
+        
 
     }
 
@@ -70,7 +72,6 @@ class ViewController: NSViewController {
         pdfFileView.document = document
         //resetNavigationButtons()
     }
-
 
 }
 
