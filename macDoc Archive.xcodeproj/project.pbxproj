@@ -14,6 +14,7 @@
 		D3EECD4023B8E8FB00900AA8 /* macDoc_Archive.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3EECD3E23B8E8FB00900AA8 /* macDoc_Archive.xcdatamodeld */; };
 		D3EECD4223B8E8FD00900AA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3EECD4123B8E8FD00900AA8 /* Assets.xcassets */; };
 		D3EECD4523B8E8FD00900AA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3EECD4323B8E8FD00900AA8 /* Main.storyboard */; };
+		D3F4CEE823BB4C9E0095B04F /* macOS Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F4CEE723BB4C9E0095B04F /* macOS Library.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D3EECD4423B8E8FD00900AA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3EECD4623B8E8FD00900AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3EECD4723B8E8FD00900AA8 /* macDoc_Archive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macDoc_Archive.entitlements; sourceTree = "<group>"; };
+		D3F4CEE723BB4C9E0095B04F /* macOS Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "macOS Library.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
