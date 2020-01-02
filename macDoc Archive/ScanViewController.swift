@@ -10,14 +10,14 @@ import Cocoa
 import Quartz
 import AppKit
 
-class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScannerDeviceDelegate, ICDeviceBrowserDelegate, ICDeviceDelegate  {
+class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScannerDeviceDelegate, ICDeviceBrowserDelegate {
     
     // Storyboard Connections
     @IBOutlet weak var scannerView: IKScannerDeviceView!
     
     // Variables and Constants
     var deviceBrowser:ICDeviceBrowser!
-    var scanner:ICScannerDevice!
+    var myScanner:ICScannerDevice!
     
     let appDelegate = NSApplication.shared.delegate as! AppDelegate
     
@@ -25,7 +25,6 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
         super.viewDidLoad()
         
         scannerView.delegate = self
-        
 
         // Setup Device Browser
         deviceBrowser = ICDeviceBrowser()
@@ -45,6 +44,10 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     
     // MARK: - Delegate Functions
     
+    func scannerDeviceDidBecomeAvailable(_ scanner: ICScannerDevice) {
+        print("scannerDevice ready")
+    }
+    
     func scannerDevice(_ scanner: ICScannerDevice, didCompleteOverviewScanWithError error: Error?) {
         print("ScanViewController: Device Completed Overview Scan - " + scanner.name!)
     }
@@ -54,7 +57,7 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     }
     
     func scannerDeviceView(_ scannerDeviceView: IKScannerDeviceView!, didScanTo url: URL!, fileData data: Data!, error: Error!) {
-        print("ScanViewController: Scanned to: " + url.absoluteString + " - " + scanner.name!)
+        print("ScanViewController: Scanned to: " + url.absoluteString + " - " + myScanner.name!)
     }
     
     func scannerDeviceView(_ scannerDeviceView: IKScannerDeviceView!, didEncounterError error: Error!) {
@@ -66,13 +69,9 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
         print("ScanViewController: Device Added - " + device.name!)
         print(device)
         
-        device.delegate = self
-        device.requestOpenSession()
-        
-        scanner = device as? ICScannerDevice
-        scanner.delegate = self
-        
-        scanner.requestOpenSession()
+        scannerView.scannerDevice = device as? ICScannerDevice
+        myScanner = scannerView.scannerDevice
+        myScanner.delegate = self
         
     }
     
@@ -81,7 +80,7 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     }
     
     func device(_ device: ICDevice, didCloseSessionWithError error: Error) {
-        print("error")
+        print("Device Close session error")
         print(error.localizedDescription)
     }
     
@@ -91,7 +90,12 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     }
     
     func device(_ device: ICDevice, didOpenSessionWithError error: Error?) {
-        print("error: " + (error?.localizedDescription ?? "") )
+        print("Device Open session: " + (error?.localizedDescription ?? "") )
+    }
+    
+    func deviceDidBecomeReady(_ device: ICDevice) {
+        print("Device ready")
+
     }
     
 }
