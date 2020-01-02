@@ -607,6 +607,16 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Archive" id="Hne-7P-IUg" userLabel="Archive">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Archive" id="wuL-1u-nlO">
+                                    <items>
+                                        <menuItem title="Burn to Disc" id="non-SG-dAK">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="View" id="H8h-7b-M4v">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="View" id="HyV-fh-RgO">
@@ -687,6 +697,19 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="98" y="-389"/>
+        </scene>
+        <!--Burn to Disc-->
+        <scene sceneID="cCK-39-0Xr">
+            <objects>
+                <viewController title="Burn to Disc" id="9XM-L9-vBX" customClass="Burn2Disc" customModule="macDoc_Archive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="Id5-h0-2zB">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="tct-S9-8GZ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="-159"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
