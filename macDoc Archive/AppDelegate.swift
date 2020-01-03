@@ -11,9 +11,7 @@ import Quartz
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
-    var deviceBrowser:ICDeviceBrowser!
-    var devScanner: ICScannerDevice!
+    
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         
@@ -126,7 +124,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     @IBAction func menuBurn2Disc(_ sender: NSMenuItem) {
         
-        //Burn2Disc()
+        
     }
     
 }

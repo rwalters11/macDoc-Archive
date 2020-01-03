@@ -24,7 +24,7 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        scannerView.delegate = self
+        //scannerView.delegate = self
 
         // Setup Device Browser
         deviceBrowser = ICDeviceBrowser()
@@ -38,14 +38,22 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
                 ICDeviceLocationTypeMask.bluetooth.rawValue)!
 
         deviceBrowser.start()
-        print(deviceBrowser.isBrowsing)
+        print("Device Browser running: " + deviceBrowser.isBrowsing.description)
         
+    }
+    
+    override func viewWillDisappear() {
+        
+        myScanner.requestCloseSession()
+        
+        deviceBrowser.stop()
     }
     
     // MARK: - Delegate Functions
     
+    // Scanner device delegate functions
     func scannerDeviceDidBecomeAvailable(_ scanner: ICScannerDevice) {
-        print("scannerDevice ready")
+        print("Previous scanner session has ended.")
     }
     
     func scannerDevice(_ scanner: ICScannerDevice, didCompleteOverviewScanWithError error: Error?) {
@@ -56,6 +64,7 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
         print("ScanViewController: Device Completed Scan - " + scanner.name!)
     }
     
+    // Scanner Device View delegate functions
     func scannerDeviceView(_ scannerDeviceView: IKScannerDeviceView!, didScanTo url: URL!, fileData data: Data!, error: Error!) {
         print("ScanViewController: Scanned to: " + url.absoluteString + " - " + myScanner.name!)
     }
@@ -64,14 +73,18 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
         print("ScanViewController: Error - " + error.debugDescription)
     }
     
+    // Device browser delegate functions
     func deviceBrowser(_ browser: ICDeviceBrowser, didAdd device: ICDevice, moreComing: Bool) {
         
         print("ScanViewController: Device Added - " + device.name!)
-        print(device)
         
-        scannerView.scannerDevice = device as? ICScannerDevice
-        myScanner = scannerView.scannerDevice
+        // Set device as ICScanner type and assign device delegate
+        myScanner = device as? ICScannerDevice
         myScanner.delegate = self
+        
+        // Assign added scanner to ScannerView and assign delegate
+        scannerView.delegate = self
+        scannerView.scannerDevice = myScanner
         
     }
     
@@ -79,8 +92,9 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
         device.requestCloseSession()
     }
     
+    // Device delegate functions
     func device(_ device: ICDevice, didCloseSessionWithError error: Error) {
-        print("Device Close session error")
+        print("Device Closed session" + (error.localizedDescription) )
         print(error.localizedDescription)
     }
     
@@ -90,12 +104,18 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     }
     
     func device(_ device: ICDevice, didOpenSessionWithError error: Error?) {
-        print("Device Open session: " + (error?.localizedDescription ?? "") )
+        print("Device Opened session: " + (error?.localizedDescription ?? "") )
     }
     
     func deviceDidBecomeReady(_ device: ICDevice) {
-        print("Device ready")
-
+        
+        print("Device reports ready")
+        //print(device)
+        
+    }
+    
+    func device(_ device: ICDevice, didReceiveStatusInformation status: [ICDeviceStatus : Any]) {
+        print(status)
     }
     
 }
