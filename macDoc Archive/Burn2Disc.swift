@@ -62,6 +62,7 @@ extension MainViewController {
         // Test for user clicked cancel
         if (retVal == NSApplication.ModalResponse.cancel.rawValue)
         {
+            // Exit
             return
         }
         
