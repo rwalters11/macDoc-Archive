@@ -124,6 +124,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         
     }
+    @IBAction func menuBurn2Disc(_ sender: NSMenuItem) {
+        
+        //Burn2Disc()
+    }
+    
 }
 
 

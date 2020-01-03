@@ -5,16 +5,61 @@
 //  Created by Richard Walters on 02/01/2020.
 //  Copyright © 2020 Richard Walters. All rights reserved.
 //
+//  Extension to Main View Controller to add disc burning capability
 
 import Cocoa
 import DiscRecording
 import DiscRecordingUI
 
-class Burn2Disc: NSViewController {
+extension MainViewController {
+    
+    // Storyboard Connections
+    @IBAction func menuBurn2Disc(_ sender: NSMenuItem) {
+        
+        Burn2Disc()
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
+    // Function to handle disc burning
+    func Burn2Disc() {
+        
+        print("MVC: Burn2Disc entered")
+        
+        setData4Disc()
+        
+        openDiscBurnSetup()
+        
+    }
+    
+    // Function to assemble data to be written to disc
+    func setData4Disc()
+    {
+        
+    }
+    
+    // Function to open a disc burning dialog
+    func openDiscBurnSetup() {
+        
+        let dialog = DRBurnSetupPanel()
+        
+        dialog.title                   = "Burn an Archive to Disc";
+        dialog.showsResizeIndicator    = true;
+
+        // Show the disc burning setup panel
+        let retVal = dialog.run()
+
+        // Test for user clicked cancel
+        if (retVal == NSApplication.ModalResponse.cancel.rawValue)
+        {
+            return
+        }
+        
+        // Get configuration data from setup panel
+        let burnData = dialog.burnObject()
+        // Instaniate Burn Progress Panel
+        let burnPnlProgress = DRBurnProgressPanel()
+        // Start the burn and display progress
+        burnPnlProgress.begin(for: burnData, layout: <#T##Any!#>)
+        
     }
     
 }
