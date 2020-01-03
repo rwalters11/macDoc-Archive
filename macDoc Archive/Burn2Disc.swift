@@ -24,20 +24,32 @@ extension MainViewController {
         
         print("MVC: Burn2Disc entered")
         
-        setData4Disc()
+        let track4Data = setData4Disc()
         
-        openDiscBurnSetup()
+        openDiscBurnSetup(track: track4Data)
         
     }
     
     // Function to assemble data to be written to disc
-    func setData4Disc()
+    func setData4Disc() -> DRTrack
     {
+        var trackData: DRTrack
         
+        // Gather file information for Archive to be burned
+        let home = FileManager.default.homeDirectoryForCurrentUser
+        let path2Archive = "begsi.pdf"
+        let archiveURL:URL = home.appendingPathComponent(path2Archive)
+        
+        // Set the root folder for disc as the top level folder for the Archive
+        let rFolder = DRFolder(path: archiveURL.absoluteString)
+        // Create the disc track
+        trackData = DRTrack(forRootFolder: rFolder)
+        
+        return trackData
     }
     
     // Function to open a disc burning dialog
-    func openDiscBurnSetup() {
+    func openDiscBurnSetup(track: DRTrack) {
         
         let dialog = DRBurnSetupPanel()
         
@@ -58,7 +70,7 @@ extension MainViewController {
         // Instaniate Burn Progress Panel
         let burnPnlProgress = DRBurnProgressPanel()
         // Start the burn and display progress
-        burnPnlProgress.begin(for: burnData, layout: <#T##Any!#>)
+        burnPnlProgress.begin(for: burnData, layout: track)
         
     }
     
