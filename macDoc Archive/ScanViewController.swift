@@ -28,7 +28,9 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
 
         // Setup Device Browser
         deviceBrowser = ICDeviceBrowser()
+        // Set Delegate
         deviceBrowser.delegate = self
+        // Set options mask for device browser to search for
         deviceBrowser.browsedDeviceTypeMask = ICDeviceTypeMask(rawValue:
                 ICDeviceTypeMask.scanner.rawValue |
                 ICDeviceLocationTypeMask.local.rawValue |
@@ -37,7 +39,9 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
                 ICDeviceLocationTypeMask.remote.rawValue |
                 ICDeviceLocationTypeMask.bluetooth.rawValue)!
 
+        // Start the device browser
         deviceBrowser.start()
+        // Console
         print("Device Browser running: " + deviceBrowser.isBrowsing.description)
         
     }
@@ -53,15 +57,15 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     
     // Scanner device delegate functions
     func scannerDeviceDidBecomeAvailable(_ scanner: ICScannerDevice) {
-        print("Previous scanner session has ended.")
+        print("Previous scanner session for " + scanner.name! + "has ended.")
     }
     
     func scannerDevice(_ scanner: ICScannerDevice, didCompleteOverviewScanWithError error: Error?) {
-        print("ScanViewController: Device Completed Overview Scan - " + scanner.name!)
+        print("ScanViewController: Device" + scanner.name! + " completed Overview Scan")
     }
     
     func scannerDevice(_ scanner: ICScannerDevice, didCompleteScanWithError error: Error?) {
-        print("ScanViewController: Device Completed Scan - " + scanner.name!)
+        print("ScanViewController: Device " + scanner.name! + " completed Detail Scan")
     }
     
     // Scanner Device View delegate functions

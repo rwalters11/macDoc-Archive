@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D33F031223BBBBB50035624E /* functionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F031123BBBBB50035624E /* functionLibrary.swift */; };
 		D33F031423BBDAC10035624E /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F031323BBDAC10035624E /* ScanViewController.swift */; };
+		D362762223CB694B0072005B /* appLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D362762123CB694B0072005B /* appLibrary.swift */; };
 		D3A5F3FF23BE4B4F008F649C /* Burn2Disc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5F3FE23BE4B4F008F649C /* Burn2Disc.swift */; };
 		D3EECD3B23B8E8FB00900AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EECD3A23B8E8FB00900AA8 /* AppDelegate.swift */; };
 		D3EECD3D23B8E8FB00900AA8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EECD3C23B8E8FB00900AA8 /* MainViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		D33F031123BBBBB50035624E /* functionLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionLibrary.swift; sourceTree = "<group>"; };
 		D33F031323BBDAC10035624E /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		D362762123CB694B0072005B /* appLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appLibrary.swift; sourceTree = "<group>"; };
 		D3A5F3FE23BE4B4F008F649C /* Burn2Disc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burn2Disc.swift; sourceTree = "<group>"; };
 		D3EECD3723B8E8FB00900AA8 /* macDoc Archive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macDoc Archive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EECD3A23B8E8FB00900AA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				D3EECD4123B8E8FD00900AA8 /* Assets.xcassets */,
 				D3EECD4323B8E8FD00900AA8 /* Main.storyboard */,
 				D33F031323BBDAC10035624E /* ScanViewController.swift */,
+				D362762123CB694B0072005B /* appLibrary.swift */,
 				D3EECD4623B8E8FD00900AA8 /* Info.plist */,
 				D3EECD4723B8E8FD00900AA8 /* macDoc_Archive.entitlements */,
 				D3EECD3E23B8E8FB00900AA8 /* macDoc_Archive.xcdatamodeld */,
@@ -149,6 +152,7 @@
 				D3EECD3D23B8E8FB00900AA8 /* MainViewController.swift in Sources */,
 				D3EECD3B23B8E8FB00900AA8 /* AppDelegate.swift in Sources */,
 				D33F031423BBDAC10035624E /* ScanViewController.swift in Sources */,
+				D362762223CB694B0072005B /* appLibrary.swift in Sources */,
 				D3EECD4023B8E8FB00900AA8 /* macDoc_Archive.xcdatamodeld in Sources */,
 				D33F031223BBBBB50035624E /* functionLibrary.swift in Sources */,
 			);
