@@ -9,6 +9,27 @@
 import Cocoa
 import Foundation
 
+func showMessagePopover(sender: AnyObject, message: String) {
+    let controller = NSViewController()
+    controller.view = NSView(frame: CGRect(x: CGFloat(100), y: CGFloat(50), width: CGFloat(100), height: CGFloat(50)))
+
+    let popover = NSPopover()
+    popover.contentViewController = controller
+    popover.contentSize = controller.view.frame.size
+
+    popover.behavior = .transient
+    popover.animates = true
+
+    // let txt = NSTextField(frame: NSMakeRect(100,50,50,22))
+    let txt = NSTextField(frame: NSMakeRect(10,10,50,22))
+    //let txt = NSTextField(frame: controller.view.frame)
+    txt.stringValue = message
+    txt.textColor = NSColor.white.withAlphaComponent(0.95)
+    controller.view.addSubview(txt)
+    txt.sizeToFit()
+    popover.show(relativeTo: sender.bounds, of: sender as! NSView, preferredEdge: NSRectEdge.maxY)
+}
+
 func showInFinder(url: URL?){
     
     guard let url = url else { return }

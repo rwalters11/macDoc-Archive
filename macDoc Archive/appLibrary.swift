@@ -5,6 +5,7 @@
 //  Created by Richard Walters on 12/01/2020.
 //  Copyright © 2020 Richard Walters. All rights reserved.
 //
+//  Library file for macDoc Archive App
 
 import Foundation
 import Cocoa

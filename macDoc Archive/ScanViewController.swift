@@ -15,6 +15,12 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     // Storyboard Connections
     @IBOutlet weak var scannerView: IKScannerDeviceView!
     
+    // MARK: - Main Menu Actions
+    @IBAction func menuGenerateCode(_ sender: NSMenuItem) {
+        
+        rShowMessagePopover(controller: self, message: "Testing")
+    }
+    
     // Variables and Constants
     var deviceBrowser:ICDeviceBrowser!
     var myScanner:ICScannerDevice!

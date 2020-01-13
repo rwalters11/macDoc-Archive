@@ -127,6 +127,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
     }
     
+    @IBAction func menuGenerateCode(_ sender: NSMenuItem) {
+    }
 }
 
 
