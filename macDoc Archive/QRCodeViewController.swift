@@ -15,7 +15,10 @@ class QRCodeViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        
+        let qrImage = generateQRCode(from: "Document Archive ID: 000123")
+        
+        imgViewQRCode.image = qrImage
     }
     
 }

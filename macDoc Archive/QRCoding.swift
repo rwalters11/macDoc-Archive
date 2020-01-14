@@ -30,22 +30,30 @@ extension NSImage {
 
 // Function to create a QR code from a given string
 func generateQRCode(from string: String) -> UIImage? {
+
+    // Get the data from the string
     let data = string.data(using: String.Encoding.ascii)
-
-    if let filter = CIFilter(name: "CIQRCodeGenerator") {
-        
-        filter.setValue(data, forKey: "inputMessage")
-        let transform = CGAffineTransform(scaleX: 3, y: 3)
-
-        if let output = filter.outputImage?.transformed(by: transform) {
-            //return UIImage(ciImage: output)
-            return UIImage(cgImage: output as! CGImage, size: NSSizeFromString("10,10"))
-        }
-    }
-
-    return nil
+    
+    // Get a QR CIFilter
+    guard let qrFilter = CIFilter(name: "CIQRCodeGenerator") else { return nil}
+    
+    // Input the data
+    qrFilter.setValue(data, forKey: "inputMessage")
+    
+    // Get the output image
+    guard let qrImage = qrFilter.outputImage else { return nil}
+    
+    // Scale the image
+    let transform = CGAffineTransform(scaleX: 10, y: 10)
+    let scaledQrImage = qrImage.transformed(by: transform)
+    
+    // Do some processing to get the UIImage
+    let context = CIContext()
+    guard let cgImage = context.createCGImage(scaledQrImage, from: scaledQrImage.extent) else { return nil}
+    
+    return UIImage(cgImage: cgImage, size: NSSizeFromString("10,10"))
+    
 }
 
-let image = generateQRCode(from: "Hacking with Swift is the best iOS coding tutorial I've ever read!")
 
 

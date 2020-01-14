@@ -18,7 +18,7 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     // MARK: - Main Menu Actions
     @IBAction func menuGenerateCode(_ sender: NSMenuItem) {
         
-        rShowMessagePopover(controller: self, message: "Testing")
+        showMessagePopover(sender: self, message: "Testing")
     }
     
     // Variables and Constants
