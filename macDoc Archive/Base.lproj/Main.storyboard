@@ -97,6 +97,7 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="menuGenerateCode:" target="Ady-hI-5gd" id="qOY-NK-TNb"/>
+                                                <segue destination="Ig1-Xn-p9A" kind="modal" id="ifG-qB-EjH"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="2P0-E0-GjO"/>
@@ -201,6 +202,29 @@
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="98" y="-389"/>
+        </scene>
+        <!--QR Code-->
+        <scene sceneID="8K1-Uj-kXN">
+            <objects>
+                <viewController title="QR Code" id="Ig1-Xn-p9A" customClass="QRCodeViewController" customModule="macDoc_Archive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="2Pl-GS-gI4">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lL9-BH-hRK">
+                                <rect key="frame" x="17" y="157" width="126" height="126"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="photo" id="i0H-cr-tiT"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="imgViewQRCode" destination="lL9-BH-hRK" id="MYc-k2-AtQ"/>
+                    </connections>
+                </viewController>
+                <customObject id="7lH-NR-JLW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="551" y="-149"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
