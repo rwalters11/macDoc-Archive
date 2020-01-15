@@ -16,24 +16,31 @@ typealias UIFont = NSFont
 
 class WatermarkPDFPage: PDFPage {
     
+    // Override the default drawing func with one to add the watermark in addition to the original content
     override func draw(with box: PDFDisplayBox, to context: CGContext) {
+        
+        // Draw the original content
         super.draw(with: box, to: context)
 
+        // Configure watermark text
         let string: NSString = "FREE SAMPLE"
         let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.red, .font: UIFont.boldSystemFont(ofSize: 32)]
         let stringSize = string.size(withAttributes: attributes)
 
-        UIGraphicsPushContext(context)
+        // Save current graphics drawing state
         context.saveGState()
 
+        // Get the page boundarys
         let pageBounds = bounds(for: box)
-        context.translateBy(x: (pageBounds.size.width - stringSize.width) / 2, y: pageBounds.size.height)
-        context.scaleBy(x: 1.0, y: -1.0)
+        
+        // Position drawing frame to centre the text at the base of the page
+        context.translateBy(x: (pageBounds.size.width - stringSize.width) / 2, y: 0)
+        
+        // Draw the string at bottom left corner of frame
+        string.draw(at: CGPoint(x: 0, y: 0), withAttributes: attributes)
 
-        string.draw(at: CGPoint(x: 0, y: 55), withAttributes: attributes)
-
+        // Return the graphics drawing state
         context.restoreGState()
-        UIGraphicsPopContext()
     }
 
 }
