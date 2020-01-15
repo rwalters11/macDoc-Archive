@@ -10,7 +10,8 @@ import Cocoa
 import Foundation
 import Quartz
 
-class MainViewController: NSViewController {
+//  PDFDocument delegate required for watermarking
+class MainViewController: NSViewController, PDFDocumentDelegate {
 
     // Storyboard Connections
     @IBOutlet weak var pdfFileView: PDFView!
@@ -69,8 +70,17 @@ class MainViewController: NSViewController {
     func loadPDF(pdfFileURL: URL) {
         // Create a `PDFDocument` object and set it as `PDFView`'s document to load the document in that view.
         let document = PDFDocument(url: pdfFileURL)
+        
+        // Set delegate for PDFDocument
+        document?.delegate = self
+        
         pdfFileView.document = document
         //resetNavigationButtons()
+    }
+    
+    // Watermarking sublass of PDFPage to use for PDF document
+    func classForPage() -> AnyClass {
+        return WatermarkPDFPage.self
     }
 
 }

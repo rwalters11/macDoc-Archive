@@ -201,7 +201,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="-389"/>
+            <point key="canvasLocation" x="95" y="-501"/>
         </scene>
         <!--QR Code-->
         <scene sceneID="8K1-Uj-kXN">
@@ -224,7 +224,7 @@
                 </viewController>
                 <customObject id="7lH-NR-JLW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="551" y="-149"/>
+            <point key="canvasLocation" x="-555" y="-148"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -246,7 +246,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="-112"/>
+            <point key="canvasLocation" x="-53" y="-140"/>
         </scene>
         <!--Scan Document-->
         <scene sceneID="3px-xJ-N9y">
@@ -268,7 +268,7 @@
                 </viewController>
                 <customObject id="KqN-yj-A1t" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="317" y="323"/>
+            <point key="canvasLocation" x="454" y="-163"/>
         </scene>
         <!--Main Window-->
         <scene sceneID="hIz-AP-VOD">
@@ -306,7 +306,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-183" y="323"/>
+            <point key="canvasLocation" x="-54" y="344"/>
         </scene>
     </scenes>
 </document>
