@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3081E18261B466FBFBB9AAD9 /* Pods_macDoc_Archive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E08711CD1D70208840D1A36F /* Pods_macDoc_Archive.framework */; };
 		D335618E23CE6112004D7275 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D335618D23CE6112004D7275 /* QRCodeViewController.swift */; };
-		D33F031223BBBBB50035624E /* functionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F031123BBBBB50035624E /* functionLibrary.swift */; };
+		D33F031223BBBBB50035624E /* macOSFunctionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F031123BBBBB50035624E /* macOSFunctionLibrary.swift */; };
 		D33F031423BBDAC10035624E /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F031323BBDAC10035624E /* ScanViewController.swift */; };
 		D34A3F5123CF5DF6001EB231 /* WatermarkPDFPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A3F5023CF5DF6001EB231 /* WatermarkPDFPage.swift */; };
 		D362762223CB694B0072005B /* appLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D362762123CB694B0072005B /* appLibrary.swift */; };
@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		CEB86DC13AEFFC554A482A40 /* Pods-macDoc Archive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-macDoc Archive.release.xcconfig"; path = "Target Support Files/Pods-macDoc Archive/Pods-macDoc Archive.release.xcconfig"; sourceTree = "<group>"; };
 		D335618D23CE6112004D7275 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
-		D33F031123BBBBB50035624E /* functionLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functionLibrary.swift; sourceTree = "<group>"; };
+		D33F031123BBBBB50035624E /* macOSFunctionLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOSFunctionLibrary.swift; sourceTree = "<group>"; };
 		D33F031323BBDAC10035624E /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		D34A3F5023CF5DF6001EB231 /* WatermarkPDFPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkPDFPage.swift; sourceTree = "<group>"; };
 		D362762123CB694B0072005B /* appLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appLibrary.swift; sourceTree = "<group>"; };
@@ -92,10 +92,10 @@
 				D3EECD4123B8E8FD00900AA8 /* Assets.xcassets */,
 				D3A5F3FE23BE4B4F008F649C /* Burn2Disc.swift */,
 				D36DF38823D09F5800AC7446 /* Document.swift */,
-				D33F031123BBBBB50035624E /* functionLibrary.swift */,
 				D3EECD4623B8E8FD00900AA8 /* Info.plist */,
 				D3EECD4723B8E8FD00900AA8 /* macDoc_Archive.entitlements */,
 				D3EECD3E23B8E8FB00900AA8 /* macDoc_Archive.xcdatamodeld */,
+				D33F031123BBBBB50035624E /* macOSFunctionLibrary.swift */,
 				D3EECD4323B8E8FD00900AA8 /* Main.storyboard */,
 				D3EECD3C23B8E8FB00900AA8 /* MainViewController.swift */,
 				D335618D23CE6112004D7275 /* QRCodeViewController.swift */,
@@ -238,7 +238,7 @@
 				D34A3F5123CF5DF6001EB231 /* WatermarkPDFPage.swift in Sources */,
 				D335618E23CE6112004D7275 /* QRCodeViewController.swift in Sources */,
 				D3EECD4023B8E8FB00900AA8 /* macDoc_Archive.xcdatamodeld in Sources */,
-				D33F031223BBBBB50035624E /* functionLibrary.swift in Sources */,
+				D33F031223BBBBB50035624E /* macOSFunctionLibrary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,10 +1,11 @@
 //
-//  functionLibrary.swift
+//  macOSFunctionLibrary.swift
 //  macOS Function Library
 //
 //  Created by Richard Walters on 31/12/2019.
 //  Copyright © 2019 Richard Walters. All rights reserved.
 //
+//  Library of common functions for Swift on macOS
 
 import Cocoa
 import Foundation

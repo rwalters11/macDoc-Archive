@@ -12,6 +12,8 @@ import Quartz
 
 class ARCDocument {
     
+    // Enums
+    
     // Constants & variables
     var title:String?
     var QRImage:NSImage?
@@ -19,6 +21,11 @@ class ARCDocument {
     // Initialisers
     
     
-    // Methods
+    // Private Methods
+    
+    // Function to get a QR code when a document ref is assigned
+    private func getQRCode() {
+        self.QRImage = generateQRCode(from: self.title!)
+    }
     
 }

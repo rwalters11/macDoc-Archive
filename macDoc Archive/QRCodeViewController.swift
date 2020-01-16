@@ -5,6 +5,7 @@
 //  Created by Richard Walters on 14/01/2020.
 //  Copyright © 2020 Richard Walters. All rights reserved.
 //
+//  View controller sub class to display a QR code
 
 import Cocoa
 
