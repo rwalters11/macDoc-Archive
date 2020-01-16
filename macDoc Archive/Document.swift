@@ -13,10 +13,21 @@ import Quartz
 class ARCDocument {
     
     // Enums
+    // Status
+    enum DocumentStatus {
+        
+        case new
+        case scanned
+        case saved
+        case archived
+    }
     
     // Constants & variables
-    var title:String?
+    var title:  String?
     var QRImage:NSImage?
+    var reference:  String = ""
+    var status: DocumentStatus = .new
+    var waterMark:  String = ""
     
     // Initialisers
     

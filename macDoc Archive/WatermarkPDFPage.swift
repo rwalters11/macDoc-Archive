@@ -25,7 +25,17 @@ class WatermarkPDFPage: PDFPage {
         super.draw(with: box, to: context)
 
         // Configure watermark text
-        let string: NSString = "FREE SAMPLE"
+        let watermark: NSString = "FREE SAMPLE"
+        
+        drawWatermark(with: box, to: context, displaying: watermark)
+    }
+    
+    // MARK: - Methods
+    
+    func drawWatermark(with box: PDFDisplayBox, to context: CGContext, displaying string: NSString) {
+        
+        // Configure watermark text
+        //let string: NSString = "FREE SAMPLE"
         let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.red, .font: UIFont.boldSystemFont(ofSize: 32)]
         let stringSize = string.size(withAttributes: attributes)
 

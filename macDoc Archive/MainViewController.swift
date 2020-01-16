@@ -77,6 +77,8 @@ class MainViewController: NSViewController, PDFDocumentDelegate {
         // Set delegate for PDFDocument
         document?.delegate = self
         
+        
+        
         pdfFileView.document = document
         
     }
