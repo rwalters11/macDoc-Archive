@@ -75,7 +75,7 @@ class MainViewController: NSViewController, PDFDocumentDelegate {
         document?.delegate = self
         
         pdfFileView.document = document
-        //resetNavigationButtons()
+        
     }
     
     // Watermarking sublass of PDFPage to use for PDF document
