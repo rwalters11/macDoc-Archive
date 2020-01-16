@@ -16,6 +16,8 @@ typealias UIFont = NSFont
 
 class WatermarkPDFPage: PDFPage {
     
+    //
+    
     // Override the default drawing func with one to add the watermark in addition to the original content
     override func draw(with box: PDFDisplayBox, to context: CGContext) {
         
