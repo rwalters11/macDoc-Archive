@@ -40,6 +40,9 @@ class MainViewController: NSViewController, PDFDocumentDelegate {
         let pdfFile = "begsi.pdf"
         let pdfFileURL:URL = home.appendingPathComponent(pdfFile)
         
+        // Debug console
+        print(pdfFileURL.absoluteString)
+        
         // Setup the main PDF file view
         setupPDFView()
         // Setup the PDF thumbnail view

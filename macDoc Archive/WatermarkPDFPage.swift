@@ -8,7 +8,7 @@
 //  Custom class to implement watermarking a PDF page
 
 import Cocoa
-import PDFKit
+import Quartz
 
 // Typealiases to port IOS code to macOS
 typealias UIColor = NSColor
@@ -16,7 +16,7 @@ typealias UIFont = NSFont
 
 class WatermarkPDFPage: PDFPage {
     
-    //
+    var arcDocument: ARCDocument?
     
     // Override the default drawing func with one to add the watermark in addition to the original content
     override func draw(with box: PDFDisplayBox, to context: CGContext) {

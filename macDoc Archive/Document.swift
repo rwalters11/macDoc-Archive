@@ -8,7 +8,7 @@
 //  Archive Document Model
 
 import Foundation
-import PDFKit
+import Quartz
 
 class ARCDocument {
     
