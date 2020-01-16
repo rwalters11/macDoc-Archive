@@ -25,7 +25,7 @@ class WatermarkPDFPage: PDFPage {
         super.draw(with: box, to: context)
 
         // Configure watermark text
-        let watermark: NSString = "FREE SAMPLE"
+        let watermark: NSString = "Archived"
         
         drawWatermark(with: box, to: context, displaying: watermark)
     }
@@ -36,7 +36,7 @@ class WatermarkPDFPage: PDFPage {
         
         // Configure watermark text
         //let string: NSString = "FREE SAMPLE"
-        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.red, .font: UIFont.boldSystemFont(ofSize: 32)]
+        let attributes: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.lightGray, .font: UIFont.boldSystemFont(ofSize: 32)]
         let stringSize = string.size(withAttributes: attributes)
 
         // Save current graphics drawing state
