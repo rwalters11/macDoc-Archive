@@ -23,7 +23,7 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     
     // Variables and Constants
     var deviceBrowser:ICDeviceBrowser!
-    var myScanner:ICScannerDevice!
+    var myScanner:ICScannerDevice?
     
     let appDelegate = NSApplication.shared.delegate as! AppDelegate
     
@@ -54,7 +54,10 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     
     override func viewWillDisappear() {
         
-        myScanner.requestCloseSession()
+        // Close scanner session if one exists
+        if let _ = myScanner {
+            myScanner?.requestCloseSession()
+        }
         
         deviceBrowser.stop()
     }
@@ -76,7 +79,7 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     
     // Scanner Device View delegate functions
     func scannerDeviceView(_ scannerDeviceView: IKScannerDeviceView!, didScanTo url: URL!, fileData data: Data!, error: Error!) {
-        print("ScanViewController: Scanned to: " + url.absoluteString + " - " + myScanner.name!)
+        print("ScanViewController: Scanned to: " + url.absoluteString + " - " + (myScanner?.name!)!)
     }
     
     func scannerDeviceView(_ scannerDeviceView: IKScannerDeviceView!, didEncounterError error: Error!) {
@@ -90,7 +93,7 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
         
         // Set device as ICScanner type and assign device delegate
         myScanner = device as? ICScannerDevice
-        myScanner.delegate = self
+        myScanner!.delegate = self
         
         // Assign added scanner to ScannerView and assign delegate
         scannerView.delegate = self
