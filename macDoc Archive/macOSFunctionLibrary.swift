@@ -56,7 +56,6 @@ func openFile() {
     dialog.showsResizeIndicator    = true;
     dialog.showsHiddenFiles        = false;
     dialog.canChooseDirectories    = true;
-    //dialog.canCreateDirectories    = true;
     dialog.allowsMultipleSelection = false;
     dialog.allowedFileTypes        = ["pdf"];
 
@@ -72,4 +71,36 @@ func openFile() {
         return
     }
     
+}
+
+// Function to save a file replacing the original (File/Save)
+func saveFile(url: URL) {
+    
+    // Save file
+
+}
+
+
+// Function to save a file under a different name and/or location (File/Save As)
+func saveFileAs() {
+    
+    // Let user select file location
+    let dialog = NSSavePanel()
+    
+    dialog.title                = "Save File As"
+    dialog.showsResizeIndicator    = true;
+    dialog.showsHiddenFiles        = false;
+    dialog.canCreateDirectories    = true;
+    dialog.allowedFileTypes        = ["pdf"];
+    
+    if(dialog.runModal() == NSApplication.ModalResponse.OK) {
+        let result = dialog.url
+        
+        if (result != nil) {
+            saveFile(url: result!)
+        }
+    } else {
+        // Cancelled
+        return
+    }
 }

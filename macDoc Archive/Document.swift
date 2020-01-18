@@ -23,10 +23,10 @@ class ARCDocument {
     }
     
     // Constants & variables
-    var title:  String?
-    var QRImage:NSImage?
+    var title:      String?
+    var QRImage:    NSImage?
     var reference:  String = ""
-    var status: DocumentStatus = .new
+    var status:     DocumentStatus = .new
     var waterMark:  String = ""
     
     // Initialisers
