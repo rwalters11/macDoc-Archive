@@ -22,15 +22,16 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     }
     
     // Variables and Constants
-    var deviceBrowser:ICDeviceBrowser!
-    var myScanner:ICScannerDevice?
+    var deviceBrowser:  ICDeviceBrowser!
+    var myScanner:      ICScannerDevice?
+    var arcDocument = ARCDocument()
     
     let appDelegate = NSApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //scannerView.delegate = self
+        scannerView.delegate = self
 
         // Setup Device Browser
         deviceBrowser = ICDeviceBrowser()
@@ -50,6 +51,10 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
         // Console
         print("Device Browser running: " + deviceBrowser.isBrowsing.description)
         
+        arcDocument = prepare2Scan(document: arcDocument)
+        
+        scannerView.documentName = arcDocument.title
+        
     }
     
     override func viewWillDisappear() {
@@ -66,29 +71,40 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     
     // Scanner device delegate functions
     func scannerDeviceDidBecomeAvailable(_ scanner: ICScannerDevice) {
+        
+        // Console
         print("Previous scanner session for " + scanner.name! + "has ended.")
     }
     
     func scannerDevice(_ scanner: ICScannerDevice, didCompleteOverviewScanWithError error: Error?) {
+        
+        // Console
         print("ScanViewController: Device" + scanner.name! + " completed Overview Scan")
     }
     
     func scannerDevice(_ scanner: ICScannerDevice, didCompleteScanWithError error: Error?) {
+        
+        // Console
         print("ScanViewController: Device " + scanner.name! + " completed Detail Scan")
     }
     
     // Scanner Device View delegate functions
     func scannerDeviceView(_ scannerDeviceView: IKScannerDeviceView!, didScanTo url: URL!, fileData data: Data!, error: Error!) {
+        
+        // Console
         print("ScanViewController: Scanned to: " + url.absoluteString + " - " + (myScanner?.name!)!)
     }
     
     func scannerDeviceView(_ scannerDeviceView: IKScannerDeviceView!, didEncounterError error: Error!) {
+        
+        // Console
         print("ScanViewController: Error - " + error.debugDescription)
     }
     
     // Device browser delegate functions
     func deviceBrowser(_ browser: ICDeviceBrowser, didAdd device: ICDevice, moreComing: Bool) {
         
+        // Console
         print("ScanViewController: Device Added - " + device.name!)
         
         // Set device as ICScanner type and assign device delegate
@@ -107,6 +123,8 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     
     // Device delegate functions
     func device(_ device: ICDevice, didCloseSessionWithError error: Error) {
+        
+        // Console
         print("Device Closed session" + (error.localizedDescription) )
         print(error.localizedDescription)
     }
@@ -117,18 +135,35 @@ class ScanViewController: NSViewController, IKScannerDeviceViewDelegate, ICScann
     }
     
     func device(_ device: ICDevice, didOpenSessionWithError error: Error?) {
+        
+        // Console
         print("Device Opened session: " + (error?.localizedDescription ?? "") )
     }
     
     func deviceDidBecomeReady(_ device: ICDevice) {
         
+        // Console
         print("Device reports ready")
         //print(device)
         
     }
     
     func device(_ device: ICDevice, didReceiveStatusInformation status: [ICDeviceStatus : Any]) {
+        
+        // Console
         print(status)
+    }
+    
+    // MARK: - Functions
+    
+    // Function to prepare a obj for the document to be scanned
+    func prepare2Scan(document: ARCDocument) -> ARCDocument {
+        
+        document.title = "Scan0001"
+        
+        
+        return document
+        
     }
     
 }

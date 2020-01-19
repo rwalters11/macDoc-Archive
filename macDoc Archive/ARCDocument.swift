@@ -28,6 +28,7 @@ class ARCDocument {
     var reference:  String = ""
     var status:     DocumentStatus = .new
     var waterMark:  String = ""
+    var url:        URL?
     
     // Initialisers
     

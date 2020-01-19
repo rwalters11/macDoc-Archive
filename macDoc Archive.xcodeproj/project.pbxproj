@@ -13,7 +13,7 @@
 		D33F031423BBDAC10035624E /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33F031323BBDAC10035624E /* ScanViewController.swift */; };
 		D34A3F5123CF5DF6001EB231 /* WatermarkPDFPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34A3F5023CF5DF6001EB231 /* WatermarkPDFPage.swift */; };
 		D362762223CB694B0072005B /* appLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D362762123CB694B0072005B /* appLibrary.swift */; };
-		D36DF38923D09F5800AC7446 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36DF38823D09F5800AC7446 /* Document.swift */; };
+		D36DF38923D09F5800AC7446 /* ARCDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36DF38823D09F5800AC7446 /* ARCDocument.swift */; };
 		D3A5F3FF23BE4B4F008F649C /* Burn2Disc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5F3FE23BE4B4F008F649C /* Burn2Disc.swift */; };
 		D3E0B6FF23CC6D7F000ED1F7 /* QRCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0B6FE23CC6D7F000ED1F7 /* QRCoding.swift */; };
 		D3EECD3B23B8E8FB00900AA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EECD3A23B8E8FB00900AA8 /* AppDelegate.swift */; };
@@ -30,7 +30,7 @@
 		D33F031323BBDAC10035624E /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
 		D34A3F5023CF5DF6001EB231 /* WatermarkPDFPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatermarkPDFPage.swift; sourceTree = "<group>"; };
 		D362762123CB694B0072005B /* appLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appLibrary.swift; sourceTree = "<group>"; };
-		D36DF38823D09F5800AC7446 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		D36DF38823D09F5800AC7446 /* ARCDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCDocument.swift; sourceTree = "<group>"; };
 		D3A5F3FE23BE4B4F008F649C /* Burn2Disc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burn2Disc.swift; sourceTree = "<group>"; };
 		D3E0B6FE23CC6D7F000ED1F7 /* QRCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCoding.swift; sourceTree = "<group>"; };
 		D3EECD3723B8E8FB00900AA8 /* macDoc Archive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "macDoc Archive.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +91,7 @@
 				D362762123CB694B0072005B /* appLibrary.swift */,
 				D3EECD4123B8E8FD00900AA8 /* Assets.xcassets */,
 				D3A5F3FE23BE4B4F008F649C /* Burn2Disc.swift */,
-				D36DF38823D09F5800AC7446 /* Document.swift */,
+				D36DF38823D09F5800AC7446 /* ARCDocument.swift */,
 				D3EECD4623B8E8FD00900AA8 /* Info.plist */,
 				D3EECD4723B8E8FD00900AA8 /* macDoc_Archive.entitlements */,
 				D3EECD3E23B8E8FB00900AA8 /* macDoc_Archive.xcdatamodeld */,
@@ -232,7 +232,7 @@
 				D3A5F3FF23BE4B4F008F649C /* Burn2Disc.swift in Sources */,
 				D3EECD3D23B8E8FB00900AA8 /* MainViewController.swift in Sources */,
 				D3EECD3B23B8E8FB00900AA8 /* AppDelegate.swift in Sources */,
-				D36DF38923D09F5800AC7446 /* Document.swift in Sources */,
+				D36DF38923D09F5800AC7446 /* ARCDocument.swift in Sources */,
 				D33F031423BBDAC10035624E /* ScanViewController.swift in Sources */,
 				D362762223CB694B0072005B /* appLibrary.swift in Sources */,
 				D34A3F5123CF5DF6001EB231 /* WatermarkPDFPage.swift in Sources */,
